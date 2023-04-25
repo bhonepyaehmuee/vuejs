@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue3</title>
+</head>
+<body>
+    <div id="app">{{ message }}</div>
+    <div id="app1">{{ message1 }}</div>
+    <div id="test">{{ testmsg }}
+  
+    </div>
+
+
+</body>
+<!-- vue 3 -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+  const { createApp } = Vue
+
+  createApp({
+    data() {
+      return {
+        message: 'hello vue 3'
+      }
+    }
+  }).mount('#app')
+
+// second
+    createApp({
+        data() {
+            return {
+                message1: 'hello  this is second vue 3'
+            }
+        }
+    }).mount('#app1')
+
+
+     createApp({
+        data() {
+            return {
+                testmsg: 'hello  this is test '
+            }
+        }
+    }).mount('#test')
+
+</script>
+
+</html>

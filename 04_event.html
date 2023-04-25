@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color:thistle
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3>The number is - {{message}}</h3>
+        <button @click="incre()">Increase</button>
+        <button @click="dec()">Decrease</button>
+        <p v-if="message>0">This  is positive number</p>
+        <p v-if="message<0">This is negative number</p>
+        <p v-if="message==0">This is zero</p>
+
+        <input type="text" name="" v-model="myText" placeholder="enter data"  v-on:keyup.enter="sendData()">
+        <button @click="sendData()"> Send </button>
+        <!-- <button v-on:click="clickMe()">Click here!</button> -->
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+    var a= new Vue({
+        el: '#app',
+        data:{
+            message: "0",
+            myText:"",
+        },
+        methods:{
+            // clickMe(event){
+            //     alert(' hello you clickeed');
+
+            // }
+            sendData(){
+                console.log(' hello you enter data is '+this.myText);
+            },
+
+            incre(){
+                this.message ++;
+            },
+            dec(){
+                this.message--;
+            },
+
+        }
+    })
+</script>
+</html>
